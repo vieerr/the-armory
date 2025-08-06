@@ -1,0 +1,11 @@
+<div class="card bg-base-100 w-fit ">
+  <img src="{{ product.imageUrl }}" alt="Shoes" class="rounded-sm" />
+  <div class="card-body items-center text-center mx-0 px-0">
+    <h2 class="font-medium">{{ product.name }}</h2>
+    <!-- <p>{{ product.description }}</p> -->
+    <p class="text-lg font-bold"> $ {{ product.price.toFixed(2) }}</p>
+    <div class="card-actions w-full">
+      <button class="btn w-full rounded-sm">Buy Now</button>
+    </div>
+  </div>
+</div>
