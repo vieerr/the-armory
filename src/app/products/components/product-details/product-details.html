@@ -1,0 +1,102 @@
+<div class="p-10 w-screen">
+  <div class="grid grid-cols-1 md:grid-cols-2 p-10">
+    <div class="rounded-lg flex justify-center">
+      <img
+        class="card h-2/3"
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.etsystatic.com%2F23400818%2Fr%2Fil%2Fd84400%2F3247995997%2Fil_1080xN.3247995997_n2am.jpg&f=1&nofb=1&ipt=0bf1a14df0c1efec38a5f528281e2f1bbf9d08ca3f0f4933f0677d57ee683342"
+        alt="Crystal Earrings of Hearing"
+      />
+      <div class="flex flex-col space-y-4 ml-4">
+        <img
+          class="w-24 h-24 object-cover rounded-lg border border-gray-300"
+          src="https://i.etsystatic.com/23400818/r/il/2e6e7d/3247995999/il_680xN.3247995999_2q5v.jpg"
+          alt="Crystal Earrings Side View"
+        />
+        <img
+          class="w-24 h-24 object-cover rounded-lg border border-gray-300"
+          src="https://i.etsystatic.com/23400818/r/il/7c8e7d/3247995998/il_680xN.3247995998_3q5v.jpg"
+          alt="Crystal Earrings Close Up"
+        />
+        <img
+          class="w-24 h-24 object-cover rounded-lg border border-gray-300"
+          src="https://i.etsystatic.com/23400818/r/il/8d8e7d/3247995996/il_680xN.3247995996_4q5v.jpg"
+          alt="Crystal Earrings Packaging"
+        />
+      </div>
+    </div>
+    <div>
+      <h2 class="text-3xl font-medieval font-bold">{{product.name}}</h2>
+      <div class="flex items-center mt-2">
+        <div class="rating">
+          @for (item of [1,2,3,4,5]; track $index) {
+          <div
+            class="mask mask-star"
+            [attr.aria-current]="item === product.rating ? 'true' : null"
+          ></div>
+
+          }
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="mt-4">
+        <span class="text-3xl flex items-center gap-3 font-bold">
+          {{product.price }}
+          <ng-icon color="yellow" name="boxCoinSolid"></ng-icon>
+        </span>
+        <!-- <span class="text-sm ml-2">+ 5 silver for shipping</span> -->
+      </div>
+
+      <!-- Description -->
+      <p class="mt-4">{{product.description}}</p>
+
+      <!-- Add to Cart with Quantity Selector -->
+      <div class="flex items-center mt-6 gap-4">
+        <div class="flex items-center border rounded-lg px-2 py-1">
+          <button
+            class="btn btn-sm btn-ghost"
+            type="button"
+            (click)="decrementQuantity()"
+            aria-label="Decrease quantity"
+          >
+            <ng-icon name="boxMinus" size="1.5em"></ng-icon>
+          </button>
+          <input
+            type="number"
+            class="w-12 text-center border-none bg-transparent focus:outline-none"
+            [min]="1"
+            [max]="99"
+            [value]="quantity"
+          />
+          <button
+            class="btn btn-sm btn-ghost"
+            type="button"
+            (click)="incrementQuantity()"
+            aria-label="Increase quantity"
+          >
+            <ng-icon name="boxPlus" size="1.5em"></ng-icon>
+          </button>
+        </div>
+        <button
+          class="btn btn-primary w-full md:w-auto"
+          (click)="addToCart(product, quantity)"
+        >
+          <i class="fas fa-cart-plus mr-2"></i>ADD TO CART
+        </button>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3 class="text-xl font-medieval font-bold">About This Item</h3>
+      <ul class="mt-2 space-y-2 list-disc list-inside text-secondary">
+        @for (detail of product.details; track $index) {
+        <li class="flex items-start gap-2">
+          <ng-icon name="boxCheck"  size="1.2em"></ng-icon>
+          <span>{{ detail }}</span>
+        </li>
+        }
+      </ul>
+
+    </div>
+  </div>
+</div>
