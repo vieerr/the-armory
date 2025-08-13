@@ -1,5 +1,5 @@
-<button class="card bg-base-100 w-fit" routerLink="/products/{{ product.id }}">
-  <img src="{{ product.imageUrl }}" alt="Shoes" class="rounded-sm" />
+<button class="card bg-base-100 w-full h-96" routerLink="/products/{{ product.id }}">
+  <img src="{{ product.imageUrl }}" alt="Shoes" class="rounded-sm h-2/3" />
   <div class="card-body items-center text-center mx-0 px-0">
     <h2 class="font-medium">{{ product.name }}</h2>
     <p class="text-lg font-bold">$ {{ product.price.toFixed(2) }}</p>

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductInterface } from '../../interfaces/product-interface';
-import { cartService } from '../../../shopping-cart/cart-service';
+import { cartService } from '../../../shopping-cart/services/cart-service';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({

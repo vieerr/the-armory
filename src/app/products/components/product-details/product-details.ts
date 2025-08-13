@@ -1,16 +1,17 @@
 import { Component, inject, NgModule } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../services/product-service';
-import { ProductInterface } from '../../interfaces/product-interface';
+import { ProductService } from '@app/products/services/product-service';
+import { ProductInterface } from '@app/products/interfaces/product-interface';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { heroUsers } from '@ng-icons/heroicons/outline';
 import { boxCoinSolid} from '@ng-icons/boxicons/solid';
 import { boxCheck, boxMinus, boxPlus} from '@ng-icons/boxicons/regular';
-import { cartService } from '../../../shopping-cart/cart-service';
+import { cartService } from '@app/shopping-cart/services/cart-service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
-  imports: [NgIcon, ],
+  imports: [NgIcon,CurrencyPipe ],
   templateUrl: './product-details.html',
   styleUrl: './product-details.css',
   viewProviders: [provideIcons({ heroUsers, boxCoinSolid, boxMinus, boxPlus, boxCheck })],
