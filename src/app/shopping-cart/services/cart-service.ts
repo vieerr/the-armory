@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
+import { CartItem } from '../interfaces/CartItem';
+import { ProductInterface } from '@app/products/interfaces/product-interface';
 @Injectable({
   providedIn: 'root',
 })
@@ -39,6 +33,11 @@ class CartService {
       item.quantity = quantity;
       this.cartSubject.next([...this.cartItems]);
     }
+  }
+
+  getProductQuantity(itemId: number): number {
+    const item = this.cartItems.find((i) => i.id === itemId);
+    return item ? item.quantity : 0;
   }
 
   clearCart(): void {
