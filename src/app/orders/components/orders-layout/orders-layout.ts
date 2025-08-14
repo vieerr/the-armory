@@ -3,11 +3,11 @@ import { Orders } from "../orders/orders";
 import { CancelledOrders } from "../cancelled-orders/cancelled-orders";
 
 @Component({
-  selector: 'app-orders-layot',
+  selector: 'app-orders-layout',
   imports: [Orders, CancelledOrders],
-  templateUrl: './orders-layot.html',
+  templateUrl: './orders-layout.html',
   styles: ``
 })
-export class OrdersLayot {
+export class OrdersLayout {
 
 }

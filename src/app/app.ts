@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Navbar } from "./components/general/navbar/navbar";
-import { ProductCard } from "./products/components/product-card/product-card";
-import { ProductCatalogue } from "./products/components/product-catalogue/product-catalogue";
-import { ProductLayout } from "./products/components/product-layout/product-layout";
+import { Navbar } from './components/general/navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, ProductCard, ProductCatalogue, ProductLayout],
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -4,9 +4,11 @@ import { ProductLayout } from './products/components/product-layout/product-layo
 import { ShoppingCart } from './shopping-cart/components/shopping-cart/shopping-cart';
 import { Checkout } from './billing/components/order-details/checkout';
 import { OrderConfirmationComponent } from './billing/components/confirmation/confirmation';
-import { OrdersLayot } from './orders/components/orders-layot/orders-layot';
+import { OrdersLayout } from './orders/components/orders-layout/orders-layout';
+import { OrderTracking } from './tracking/components/order-tracking/order-tracking';
 export const routes: Routes = [
-  {path: 'orders', component: OrdersLayot},
+  { path: 'orders', component: OrdersLayout },
+  { path: 'orders/tracking/:id', component: OrderTracking },
   { path: 'cart', component: ShoppingCart },
   { path: 'checkout/confirmation', component: OrderConfirmationComponent },
   { path: 'checkout', component: Checkout },

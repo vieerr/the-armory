@@ -5,12 +5,8 @@
     <div class="mb-8 text-center">
       <h1 class="text-3xl font-bold font-medieval text-gray-900 mb-2">
         <ng-icon name="gameScroll" class="mr-2 align-middle"></ng-icon>
-        Your Past Orders
+        Your Orders
       </h1>
-      <div class="tabs tabs-boxed justify-center bg-amber-100 inline-flex">
-        <button class="tab tab-active font-medieval">Orders</button>
-        <button class="tab font-medieval">Cancelled Orders</button>
-      </div>
     </div>
 
     <!-- Orders List -->
@@ -76,7 +72,10 @@
               <ng-icon name="gameCancel" class="mr-1"></ng-icon>
               Cancel Order
             </button>
-            <button class="btn btn-outline btn-primary btn-sm font-medieval">
+            <button
+              routerLink="/orders/tracking/1"
+              class="btn btn-outline btn-primary btn-sm font-medieval"
+            >
               <ng-icon name="gameMap" class="mr-1"></ng-icon>
               Track Order
             </button>
@@ -148,7 +147,10 @@
               <ng-icon name="gameCancel" class="mr-1"></ng-icon>
               Cancel Order
             </button>
-            <button class="btn btn-outline btn-primary btn-sm font-medieval">
+            <button
+              routerLink="/orders/tracking/1"
+              class="btn btn-outline btn-primary btn-sm font-medieval"
+            >
               <ng-icon name="gameMap" class="mr-1"></ng-icon>
               Track Order
             </button>

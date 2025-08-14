@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import {
   gameTiedScroll,
@@ -11,7 +12,7 @@ import {
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [NgIconComponent],
+  imports: [NgIconComponent, RouterLink],
   templateUrl: './orders.html',
   styles: [``],
   providers: [
